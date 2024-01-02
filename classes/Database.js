@@ -99,7 +99,11 @@ class Database {
             _channelId: channelId ? channelId : null,
         }, { _v: 1, _id: 0 }))?._v
 
-        return data || __var;
+        console.log(data)
+
+        if (!data) return __var || undefined;
+
+        return data;
     }
      
     async set(table, variable, data, guildId, userId, messageId, channelId) {
